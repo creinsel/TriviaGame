@@ -1,0 +1,49 @@
+.container{
+    background-image: url("../images/fishing-booker.jpg");
+    background-repeat: repeat;
+    background-size: 200px;
+    background-attachment: fixed; 
+    font-family: 'Alfa Slab One', cursive; 
+};
+
+.space{
+    height:10px;
+}
+
+h1{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(40,167,69);
+};
+
+.question-num{
+    color:rgb(40,167,69);
+}
+
+.timer{
+    border: dashed 1px rgb(40,167,69); 
+    text-align: center;
+}
+
+.photo{
+    border: solid 1px rgb(40,167,69);
+}
+
+.question-main{
+    border: solid 1px rgb(40,167,69);
+}
+
+.a{
+    border: solid 1px rgb(40,167,69);
+}
+
+.b{
+    border: solid 1px rgb(40,167,69);
+}
+
+.c{
+    border: solid 1px rgb(40,167,69);
+}
+
+.d{
+    border: solid 1px rgb(40,167,69);
+}
