@@ -150,7 +150,7 @@ function decrement(){
     if (number===0){
         stop();
         //find cooler way to alert create var correct to add at end of message
-        alert("Time's Up! The correct answer is:");
+        alert("Time's Up! The correct answer is:"+ " ");
     }
 };
 
@@ -162,4 +162,13 @@ function stop(){
 run();
 //create function based off of timer to display q+a in correct spaces
     //have either correct or incorrect messgae pop up once answer is selected
-    //have out of time pop up if time runs out
+
+// choosing random from quiz object to display on screen
+    var randomIndex = Math.floor(Math.random() * quiz.length);
+    console.log(randomIndex);
+
+    var toDisplay= quiz[randomIndex];
+    console.log(toDisplay);
+
+
+    $(".question-main").html("<p>"+ toDisplay.question +"</p>");
