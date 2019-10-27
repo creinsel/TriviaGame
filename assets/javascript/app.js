@@ -2,7 +2,7 @@
 const quiz=[
     {
         question: "Hawaii was the _____ state admitted to the United States.",
-        image:"../images/50th.jpg",
+        image:"images/50th.jpg",
         answers:{
             a: "1st",
             b: "48th",
@@ -14,7 +14,7 @@ const quiz=[
 
     {
         question: "What is the state fish?",
-        image:"../images/humuhumunukunukuapuaa.jpg",
+        image:"images/humuhumunukunukuapuaa.jpg",
         answers:{
             a:"Humuhumunukunukuapua'a",
             b:"Kamapua'a",
@@ -27,7 +27,7 @@ const quiz=[
 
     {
         question: "The phrase Kamaaina refers to:",
-        image:"../images/kamaaina.jpg",
+        image:"images/kamaaina.jpg",
         answers:{
             a:"1983 hurricane",
             b:"Queen of Hawaii in1864",
@@ -40,7 +40,7 @@ const quiz=[
 
     {
         question: "Who is the Goddess of Fire known for causing volcanic eruptions that form new land?",
-        image:"../images/Pele.jpg",
+        image:"images/Pele.jpg",
         answers:{
             a:"Liliokalani",
             b:"Pele",
@@ -53,7 +53,7 @@ const quiz=[
 
     {
         question: "Which island has the largest population?",
-        image:"../images/oahu.jpg",
+        image:"images/oahu.jpg",
         answers:{
             a:"Oahu",
             b:"Maui",
@@ -66,7 +66,7 @@ const quiz=[
 
     {
         question: "Which of the following foods is a common dish in Hawaii?",
-        image:"../images/all.jpg",
+        image:"images/all.jpg",
         answers:{
             a:"Poke",
             b:"Rice",
@@ -79,7 +79,7 @@ const quiz=[
 
     {
         question: "Which island is geographically the largest?",
-        image:"../images/bigisland.jpg",
+        image:"images/bigisland.jpg",
         answers:{
             a:"Oahu",
             b:"Maui",
@@ -92,7 +92,7 @@ const quiz=[
 
     {
         question: "The southern most town in the United States (located in Hawaii) is:",
-        image:"../images/naalehu.jpg",
+        image:"images/naalehu.jpg",
         answers:{
             a:"Pahala",
             b:"Honolulu",
@@ -105,7 +105,7 @@ const quiz=[
 
     {
         question: "Which of the following is commonly spoken amongst locals of Hawaii?",
-        image:"../images/pidgin.jpg",
+        image:"images/pidgin.jpg",
         answers:{
             a:"Pidgin",
             b:"Shaka",
@@ -118,7 +118,7 @@ const quiz=[
 
     {
         question: "When James Cook attempted to kidnap the king of Hawaii in 1779, he was killed by Hawaiiand on this holiday:",
-        image:"../images/mybloodyvalentine.jpg",
+        image:"images/mybloodyvalentine.jpg",
         answers:{
             a:"Christmas",
             b:"Easter",
@@ -157,6 +157,10 @@ function decrement(){
 function stop(){
     clearInterval(intervalID);
     intervalID=0;
+    displaySet();
+    number=30;
+    run();
+    
 
 };
 run();
@@ -164,11 +168,26 @@ run();
     //have either correct or incorrect messgae pop up once answer is selected
 
 // choosing random from quiz object to display on screen
-    var randomIndex = Math.floor(Math.random() * quiz.length);
+
+var randomIndex = Math.floor(Math.random() * quiz.length);
+console.log(randomIndex);
+
+var toDisplay= quiz[randomIndex];
+console.log(toDisplay);
+
+function displaySet(){
+    randomIndex = Math.floor(Math.random() * quiz.length);
     console.log(randomIndex);
 
-    var toDisplay= quiz[randomIndex];
+    toDisplay= quiz[randomIndex];
     console.log(toDisplay);
 
 
     $(".question-main").html("<p>"+ toDisplay.question +"</p>");
+    $(".a").html("<p>"+toDisplay.answers.a + "</p>")
+    $(".b").html("<p>"+toDisplay.answers.b + "</p>")
+    $(".c").html("<p>"+toDisplay.answers.c + "</p>")
+    $(".d").html("<p>"+toDisplay.answers.d + "</p>")
+    $(".photo").html("<img>"+ toDisplay.image+ "</img>")
+};
+
