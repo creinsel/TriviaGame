@@ -1,3 +1,4 @@
+$(document).ready()
 // quiz object
 const quiz=[
 
@@ -119,7 +120,7 @@ const quiz=[
 
     {
         question: "When James Cook attempted to kidnap the king of Hawaii in 1779, he was killed by Hawaiians on this holiday:",
-        image:"images/mybloodyvalentine.jpg",
+        image:"../images/mybloodyvalentine.jpg",
         answers:{
             a:"a: Christmas",
             b:"b: Easter",
@@ -165,18 +166,12 @@ function stop(){
 };
 
 run();
-//create function based off of timer to display q+a in correct spaces
-    //have either correct or incorrect messgae pop up once answer is selected
-
-// choosing random from quiz object to display on screen
 
 
  var toDisplay; 
 
-
-// var toDisplay= quiz[i};
-// console.log(toDisplay);
-
+// choosing random from quiz object to display on screen
+//create function based off of timer to display q+a in correct spaces
 function displaySet(){
     randomIndex = Math.floor(Math.random() * quiz.length);
     console.log(randomIndex);
@@ -188,8 +183,72 @@ function displaySet(){
         $(".b").html("<p>"+toDisplay.answers.b + "</p>")
         $(".c").html("<p>"+toDisplay.answers.c + "</p>")
         $(".d").html("<p>"+toDisplay.answers.d + "</p>")
-        $(".photo").html("<img src="+ toDisplay.image+ "width='200px'>")
+        $("#photo").html("<img src="+ toDisplay.image + " width='200px'>")
 
    console.log(toDisplay);
 };
+
+//have either correct or incorrect messgae pop up once answer is selected--> click 
+$(".a").on("click", function(){
+     if(toDisplay.correct==="a") {
+        alert("CORRECT");
+        stop();
+        number=31;
+        run();
+    }
+    else{
+        alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+        stop();
+        number=31;
+        run();
+    }
+});
+
+$(".b").on("click", function(){
+    if(toDisplay.correct==="b") {
+       alert("CORRECT");
+       stop();
+        number=31;
+        run();
+   }
+   else{
+       alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+       stop();
+        number=31;
+        run();
+   }
+});
+
+$(".c").on("click", function(){
+    if(toDisplay.correct==="c") {
+       alert("CORRECT");
+       stop();
+       number=31;
+       run();
+    
+   }
+   else{
+       alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+       stop();
+       number=31;
+       run();
+   }
+});
+
+$(".d").on("click", function(){
+    if(toDisplay.correct==="d") {
+       alert("CORRECT");
+       stop();
+       number=31;
+       run();
+   }
+   else{
+       alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+       stop();
+       number=31;
+       run();
+   }
+});
+
+
 
