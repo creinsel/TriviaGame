@@ -4,10 +4,10 @@ const quiz=[
         question: "Hawaii was the _____ state admitted to the United States.",
         image:"images/50th.jpg",
         answers:{
-            a: "1st",
-            b: "48th",
-            c: "30th",
-            d: "50th"
+            a: "a: 1st",
+            b: "b: 48th",
+            c: "c: 30th",
+            d: "d: 50th"
         },
         correct: "d"
     },
@@ -16,10 +16,10 @@ const quiz=[
         question: "What is the state fish?",
         image:"images/humuhumunukunukuapuaa.jpg",
         answers:{
-            a:"Humuhumunukunukuapua'a",
-            b:"Kamapua'a",
-            c:"Lono",
-            d:"Kaimana"
+            a:"a: Humuhumunukunukuapua'a",
+            b:"b: Kamapua'a",
+            c:"c: Lono",
+            d:"d: Kaimana"
         },
 
         correct: "a"
@@ -29,10 +29,10 @@ const quiz=[
         question: "The phrase Kamaaina refers to:",
         image:"images/kamaaina.jpg",
         answers:{
-            a:"1983 hurricane",
-            b:"Queen of Hawaii in1864",
-            c:"Residents of Hawaii",
-            d:"Native farming technique"
+            a:"a: 1983 hurricane",
+            b:"b: Queen of Hawaii in1864",
+            c:"c: Residents of Hawaii",
+            d:"d: Native farming technique"
         },
 
         correct: "c"
@@ -139,6 +139,7 @@ function run(){
     if (!intervalID){
 
         intervalID=setInterval(decrement, 1000);
+        displaySet();
     }
 };
 
@@ -150,44 +151,49 @@ function decrement(){
     if (number===0){
         stop();
         //find cooler way to alert create var correct to add at end of message
-        alert("Time's Up! The correct answer is:"+ " ");
+        alert("Time's Up! The correct answer is:"+ " "+ toDisplay.correct );
     }
 };
 
 function stop(){
     clearInterval(intervalID);
     intervalID=0;
-    displaySet();
+    
     number=30;
     run();
     
 
 };
+
 run();
 //create function based off of timer to display q+a in correct spaces
     //have either correct or incorrect messgae pop up once answer is selected
 
 // choosing random from quiz object to display on screen
+var toDisplay;
 
-var randomIndex = Math.floor(Math.random() * quiz.length);
-console.log(randomIndex);
 
-var toDisplay= quiz[randomIndex];
-console.log(toDisplay);
+    
+
+// var toDisplay= quiz[i};
+// console.log(toDisplay);
 
 function displaySet(){
-    randomIndex = Math.floor(Math.random() * quiz.length);
-    console.log(randomIndex);
+    // randomIndex = Math.floor(Math.random() * quiz.length);
+    // console.log(randomIndex);
 
-    toDisplay= quiz[randomIndex];
-    console.log(toDisplay);
+    // toDisplay= quiz[randomIndex];
+    
 
-
-    $(".question-main").html("<p>"+ toDisplay.question +"</p>");
-    $(".a").html("<p>"+toDisplay.answers.a + "</p>")
-    $(".b").html("<p>"+toDisplay.answers.b + "</p>")
-    $(".c").html("<p>"+toDisplay.answers.c + "</p>")
-    $(".d").html("<p>"+toDisplay.answers.d + "</p>")
-    $(".photo").html("<img>"+ toDisplay.image+ "</img>")
+    $.each(quiz,function(i,val){
+        toDisplay= quiz[i];
+        $(".question-main").html("<p>"+ toDisplay.question +"</p>")
+        $(".a").html("<p>"+toDisplay.answers.a + "</p>")
+        $(".b").html("<p>"+toDisplay.answers.b + "</p>")
+        $(".c").html("<p>"+toDisplay.answers.c + "</p>")
+        $(".d").html("<p>"+toDisplay.answers.d + "</p>")
+        $(".photo").html("<img>"+ toDisplay.image+ "</img>")
+    });
+   console.log(toDisplay);
 };
 
