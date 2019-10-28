@@ -4,7 +4,7 @@ const quiz=[
 
     {
         question: "Hawaii was the _____ state admitted to the United States.",
-        image:'../images/50th.jpg',
+        image:'assets/images/50th.jpg',
         answers: {
             a: "a: 1st",
             b: "b: 48th",
@@ -16,7 +16,7 @@ const quiz=[
 
     {
         question: "What is the state fish?",
-        image:'../images/humuhumunukunukuapuaa.jpg',
+        image:'assets/images/humuhumunukunukuapuaa.jpg',
         answers:{
             a:"a: Humuhumunukunukuapua'a",
             b:"b: Kamapua'a",
@@ -29,7 +29,7 @@ const quiz=[
 
     {
         question: "The phrase Kamaaina refers to:",
-        image:"../images/kamaaina.jpg",
+        image:"assets/images/kamaaina.jpg",
         answers:{
             a:"a: 1983 hurricane",
             b:"b: Queen of Hawaii in1864",
@@ -42,7 +42,7 @@ const quiz=[
 
     {
         question: "Who is the Goddess of Fire known for causing volcanic eruptions that form new land?",
-        image:"../images/Pele.jpg",
+        image:"assets/images/Pele.jpg",
         answers:{
             a:"a: Liliokalani",
             b:"b: Pele",
@@ -55,7 +55,7 @@ const quiz=[
 
     {
         question: "Which island has the largest population?",
-        image:"../images/oahu.jpg",
+        image:"assets/images/oahu.jpg",
         answers:{
             a:"a: Oahu",
             b:"b: Maui",
@@ -68,7 +68,7 @@ const quiz=[
 
     {
         question: "Which of the following foods is a common dish in Hawaii?",
-        image:"../images/all.jpg",
+        image:"assets/images/all.jpg",
         answers:{
             a:"a: Poke",
             b:"b: Rice",
@@ -81,7 +81,7 @@ const quiz=[
 
     {
         question: "Which island is geographically the largest?",
-        image:"../images/bigisland.jpg",
+        image:"assets/images/bigisland.jpg",
         answers:{
             a:"a: Oahu",
             b:"b: Maui",
@@ -94,7 +94,7 @@ const quiz=[
 
     {
         question: "The southern most town in the United States (located in Hawaii) is:",
-        image:"../images/naalehu.jpg",
+        image:"assets/images/naalehu.jpg",
         answers:{
             a:"a: Pahala",
             b:"b: Honolulu",
@@ -107,7 +107,7 @@ const quiz=[
 
     {
         question: "Which of the following is commonly spoken amongst locals of Hawaii?",
-        image:"../images/pidgin.jpg",
+        image:"assets/images/pidgin.jpg",
         answers:{
             a:"a: Pidgin",
             b:"b: Shaka",
@@ -120,7 +120,7 @@ const quiz=[
 
     {
         question: "When James Cook attempted to kidnap the king of Hawaii in 1779, he was killed by Hawaiians on this holiday:",
-        image:"../images/mybloodyvalentine.jpg",
+        image:"assets/images/mybloodyvalentine.jpg",
         answers:{
             a:"a: Christmas",
             b:"b: Easter",
@@ -183,7 +183,7 @@ function displaySet(){
         $(".b").html("<p>"+toDisplay.answers.b + "</p>")
         $(".c").html("<p>"+toDisplay.answers.c + "</p>")
         $(".d").html("<p>"+toDisplay.answers.d + "</p>")
-        $("#photo").html("<img src="+ toDisplay.image + " width='200px'>")
+        $("#photo").html("<img src="+ toDisplay.image + " width='330px'>")
 
    console.log(toDisplay);
 };
