@@ -130,10 +130,23 @@ const quiz=[
 
         correct: "d"
     },
+    {
+        question: "GAME OVER",
+        image:"assets/images/gameOver.jpg",
+        answers:{
+            a:" The ",
+            b:" game",
+            c:" is",
+            d:"over"
+        },
+
+        correct: "a"
+    },
 ]
 
 
 //create timer
+var count= 0;
 var number= 30;
 var intervalID
 
@@ -142,6 +155,8 @@ function run(){
 
         intervalID=setInterval(decrement, 1000);
         displaySet();
+        
+        
     }
 };
 
@@ -154,9 +169,14 @@ function decrement(){
         stop();
         //find cooler way to alert create var correct to add at end of message
         alert("Time's Up! The correct answer is:"+ " "+ toDisplay.correct );
+        incorrect++;
         number=30;
         run();
     }
+    else if (count===11){
+        stop();
+        alert("GAME OVER! You had"+ " "+correct+ "correct answers and"+" "+ incorrect+ "incorrect answers.")
+    };
 };
 
 function stop(){
@@ -168,16 +188,27 @@ function stop(){
 run();
 
 
- var toDisplay; 
+var toDisplay; 
+var empty=[];
+var correct=0;
+var incorrect=0;
 
 // choosing random from quiz object to display on screen
 //create function based off of timer to display q+a in correct spaces
 function displaySet(){
-    randomIndex = Math.floor(Math.random() * quiz.length);
-    console.log(randomIndex);
-    toDisplay=quiz[randomIndex];
-
     
+    // randomIndex = Math.floor(Math.random() * quiz.length);
+    // console.log(randomIndex);
+    // toDisplay=quiz[randomIndex];
+
+    // for (let i = 0; i< quiz.length; i++) {
+    //     count += quiz[i];
+        toDisplay=quiz[count];
+        
+    console.log(toDisplay);
+    
+    
+   
         $(".question-main").html("<p>"+ toDisplay.question +"</p>")
         $(".a").html("<p>"+toDisplay.answers.a + "</p>")
         $(".b").html("<p>"+toDisplay.answers.b + "</p>")
@@ -185,19 +216,25 @@ function displaySet(){
         $(".d").html("<p>"+toDisplay.answers.d + "</p>")
         $("#photo").html("<img src="+ toDisplay.image + " width='330px'>")
 
-   console.log(toDisplay);
+   
+  count ++;
 };
+
+
+//    console.log(empty);
 
 //have either correct or incorrect messgae pop up once answer is selected--> click 
 $(".a").on("click", function(){
      if(toDisplay.correct==="a") {
         alert("CORRECT");
+        correct++;
         stop();
         number=31;
         run();
     }
     else{
         alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+        incorrect++;
         stop();
         number=31;
         run();
@@ -207,12 +244,14 @@ $(".a").on("click", function(){
 $(".b").on("click", function(){
     if(toDisplay.correct==="b") {
        alert("CORRECT");
+       correct++
        stop();
         number=31;
         run();
    }
    else{
        alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+       incorrect++;
        stop();
         number=31;
         run();
@@ -222,6 +261,7 @@ $(".b").on("click", function(){
 $(".c").on("click", function(){
     if(toDisplay.correct==="c") {
        alert("CORRECT");
+       correct++;
        stop();
        number=31;
        run();
@@ -229,6 +269,7 @@ $(".c").on("click", function(){
    }
    else{
        alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+       incorrect++;
        stop();
        number=31;
        run();
@@ -238,17 +279,22 @@ $(".c").on("click", function(){
 $(".d").on("click", function(){
     if(toDisplay.correct==="d") {
        alert("CORRECT");
+       correct++;
        stop();
        number=31;
        run();
    }
    else{
        alert("Inncorect, the correct answer is:"+ " "+ toDisplay.correct );
+       incorrect++;
        stop();
        number=31;
        run();
    }
 });
+
+
+
 
 
 
